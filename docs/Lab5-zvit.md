@@ -9,7 +9,7 @@
 
 ## 1. Посилання на репозиторій
 
-_Вставте посилання на гілку `lab5`:_ `https://github.com/<user>/<repo>/tree/lab5`
+Гілка `lab5`: https://github.com/xpersonax/RailwayErp.MvvmDemo/tree/lab5
 
 ## 2. Що зроблено
 
