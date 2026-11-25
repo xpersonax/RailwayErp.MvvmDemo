@@ -1,0 +1,121 @@
+2026-11-25 21:12:53.464 +02:00 [INF] : Глобальні обробники необроблених винятків зареєстровано
+2026-11-25 21:12:53.612 +02:00 [INF] : Запуск RailwayErp 1.0 на Android 15
+2026-11-25 21:12:53.896 +02:00 [INF] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Сервіс збору крашів: Firebase Crashlytics (не налаштовано: немає google-services.json) (активний: false)
+2026-11-25 21:12:54.998 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Завантаження списку потягів розпочато
+2026-11-25 21:12:55.001 +02:00 [DBG] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: [crash-breadcrumb] TrainsViewModel.Load
+2026-11-25 21:12:55.003 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Запит списку потягів до сховища
+2026-11-25 21:12:56.001 +02:00 [INF] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Зі сховища завантажено 4 потягів
+2026-11-25 21:12:56.022 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Список потягів завантажено: 4 шт. за 1024 мс
+2026-11-25 21:13:24.776 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Спроба зберегти новий потяг 105K
+2026-11-25 21:13:24.781 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Збереження потяга 105K (Id=0)
+2026-11-25 21:13:25.114 +02:00 [INF] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Додано потяг 105K (Id=5), маршрут Kyiv - Dnipro
+2026-11-25 21:13:25.121 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Потяг 105K успішно збережено (Id=5)
+2026-11-25 21:13:26.851 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Спроба зберегти новий потяг 
+2026-11-25 21:13:26.852 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Збереження потяга  (Id=0)
+2026-11-25 21:13:26.855 +02:00 [WRN] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Відхилено збереження: не заповнено номер або маршрут (Number='', Route='')
+2026-11-25 21:13:26.858 +02:00 [WRN] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Потяг не збережено: Номер і маршрут потяга обов'язкові.
+2026-11-25 21:13:34.404 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Спроба зберегти новий потяг ERR1
+2026-11-25 21:13:34.405 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Збереження потяга ERR1 (Id=0)
+2026-11-25 21:13:34.716 +02:00 [ERR] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Помилка сховища під час збереження потяга ERR1
+System.IO.IOException: Сховище недоступне: таймаут запису (імітація).
+2026-11-25 21:13:34.723 +02:00 [ERR] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Невдале збереження потяга ERR1
+System.IO.IOException: Сховище недоступне: таймаут запису (імітація).
+   at RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository.SaveAsync(Train train, CancellationToken ct)
+   at RailwayErp.MvvmDemo.ViewModels.TrainsViewModel.AddTrainAsync()
+2026-11-25 21:13:34.730 +02:00 [DBG] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Виняток IOException не надіслано в хмару: сервіс крашів не підключено
+2026-11-25 21:13:50.051 +02:00 [DBG] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Debug: технічні деталі для розробника, напр. параметри запиту
+2026-11-25 21:13:50.052 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Information: потяг 743К вирушив за маршрутом Київ — Львів
+2026-11-25 21:13:50.052 +02:00 [WRN] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Warning: потяг 091К затримується на 25 хв
+2026-11-25 21:13:50.053 +02:00 [ERR] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Error: не вдалося синхронізувати розклад
+System.TimeoutException: Сервер диспетчерської не відповідає
+2026-11-25 21:13:50.053 +02:00 [FTL] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Critical: втрачено зв'язок з усіма потягами на ділянці Фастів — Козятин
+2026-11-25 21:13:51.633 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Моделювання необробленого винятку у фоновій задачі
+2026-11-25 21:13:52.172 +02:00 [ERR] : Необроблений виняток у Task (UnobservedTaskException)
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Збій фонової синхронізації розкладу (змодельований необроблений виняток у Task))
+ ---> System.InvalidOperationException: Збій фонової синхронізації розкладу (змодельований необроблений виняток у Task)
+   at RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel.<>c.<StartFireAndForget>b__19_0()
+   at System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]].InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__288_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+2026-11-25 21:13:52.181 +02:00 [DBG] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Виняток AggregateException не надіслано в хмару: сервіс крашів не підключено
+2026-11-25 21:14:02.416 +02:00 [ERR] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Нефатальна помилка обробки відповіді API
+System.FormatException: Некоректний формат відповіді API квитків (змодельовано)
+   at RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel.RecordNonFatal()
+2026-11-25 21:14:02.421 +02:00 [DBG] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Виняток FormatException не надіслано в хмару: сервіс крашів не підключено
+2026-11-25 21:14:45.182 +02:00 [WRN] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Моделювання необробленого винятку у фоновому потоці (застосунок завершиться)
+2026-11-25 21:14:45.188 +02:00 [FTL] : Необроблений виняток у AppDomain (IsTerminating=true)
+System.ApplicationException: Критичний збій потоку телеметрії потягів (змодельований)
+   at RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel.<>c.<SimulateBackgroundThreadCrashAsync>b__20_0()
+   at System.Threading.Thread.StartHelper.RunWorker()
+2026-11-25 21:14:45.189 +02:00 [DBG] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Виняток ApplicationException не надіслано в хмару: сервіс крашів не підключено
+2026-11-25 21:15:08.484 +02:00 [INF] : Глобальні обробники необроблених винятків зареєстровано
+2026-11-25 21:15:08.599 +02:00 [INF] : Запуск RailwayErp 1.0 на Android 15
+2026-11-25 21:15:08.762 +02:00 [INF] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Сервіс збору крашів: Firebase Crashlytics (не налаштовано: немає google-services.json) (активний: false)
+2026-11-25 21:15:09.522 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Завантаження списку потягів розпочато
+2026-11-25 21:15:09.523 +02:00 [DBG] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: [crash-breadcrumb] TrainsViewModel.Load
+2026-11-25 21:15:09.524 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Запит списку потягів до сховища
+2026-11-25 21:15:10.306 +02:00 [INF] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Зі сховища завантажено 4 потягів
+2026-11-25 21:15:10.322 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Список потягів завантажено: 4 шт. за 799 мс
+2026-11-25 21:17:10.179 +02:00 [INF] : Глобальні обробники необроблених винятків зареєстровано
+2026-11-25 21:17:10.303 +02:00 [INF] : Запуск RailwayErp 1.0 на Android 15
+2026-11-25 21:17:10.475 +02:00 [INF] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Сервіс збору крашів: Firebase Crashlytics (не налаштовано: немає google-services.json) (активний: false)
+2026-11-25 21:17:11.249 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Завантаження списку потягів розпочато
+2026-11-25 21:17:11.251 +02:00 [DBG] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: [crash-breadcrumb] TrainsViewModel.Load
+2026-11-25 21:17:11.251 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Запит списку потягів до сховища
+2026-11-25 21:17:12.030 +02:00 [INF] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Зі сховища завантажено 4 потягів
+2026-11-25 21:17:12.044 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Список потягів завантажено: 4 шт. за 794 мс
+2026-11-25 21:26:58.749 +02:00 [INF] : Глобальні обробники необроблених винятків зареєстровано
+2026-11-25 21:26:58.845 +02:00 [INF] : Запуск RailwayErp 1.0 на Android 15
+2026-11-25 21:26:59.001 +02:00 [INF] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Сервіс збору крашів: Firebase Crashlytics (активний: true)
+2026-11-25 21:26:59.246 +02:00 [INF] : Firebase Crashlytics ініціалізовано
+2026-11-25 21:26:59.759 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Завантаження списку потягів розпочато
+2026-11-25 21:26:59.761 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Запит списку потягів до сховища
+2026-11-25 21:27:00.553 +02:00 [INF] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Зі сховища завантажено 4 потягів
+2026-11-25 21:27:00.565 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Список потягів завантажено: 4 шт. за 805 мс
+2026-11-25 21:27:20.605 +02:00 [ERR] RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel: Нефатальна помилка обробки відповіді API
+System.FormatException: Некоректний формат відповіді API квитків (змодельовано)
+   at RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel.RecordNonFatal()
+2026-11-25 21:28:00.383 +02:00 [WRN] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Користувач ініціював тестовий краш для перевірки Firebase Crashlytics
+2026-11-25 21:28:00.430 +02:00 [FTL] : Необроблений виняток Android (UnhandledExceptionRaiser)
+System.InvalidOperationException: Тестовий краш RailwayErp (Лаб. 5): перевірка Crashlytics
+   at RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService.<>c.<ForceTestCrash>b__10_0()
+   at Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(Action action)
+   at RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService.ForceTestCrash()
+   at RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel.ForceCrashlyticsCrashAsync()
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state)
+   at Android.App.SyncContext.<>c__DisplayClass2_0.<Post>b__0()
+   at Java.Lang.Thread.RunnableImplementor.Run()
+   at Java.Lang.IRunnableInvoker.n_Run(IntPtr jnienv, IntPtr native__this)
+2026-11-25 21:28:08.519 +02:00 [INF] : Глобальні обробники необроблених винятків зареєстровано
+2026-11-25 21:28:08.615 +02:00 [INF] : Запуск RailwayErp 1.0 на Android 15
+2026-11-25 21:28:08.765 +02:00 [INF] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Сервіс збору крашів: Firebase Crashlytics (активний: true)
+2026-11-25 21:28:10.326 +02:00 [INF] : Firebase Crashlytics ініціалізовано
+2026-11-25 21:28:10.932 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Завантаження списку потягів розпочато
+2026-11-25 21:28:10.933 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Запит списку потягів до сховища
+2026-11-25 21:28:11.787 +02:00 [INF] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Зі сховища завантажено 4 потягів
+2026-11-25 21:28:11.799 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Список потягів завантажено: 4 шт. за 867 мс
+2026-11-25 21:28:52.574 +02:00 [INF] : Глобальні обробники необроблених винятків зареєстровано
+2026-11-25 21:28:52.671 +02:00 [INF] : Запуск RailwayErp 1.0 на Android 15
+2026-11-25 21:28:52.819 +02:00 [INF] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Сервіс збору крашів: Firebase Crashlytics (активний: true)
+2026-11-25 21:28:53.047 +02:00 [INF] : Firebase Crashlytics ініціалізовано
+2026-11-25 21:28:53.505 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Завантаження списку потягів розпочато
+2026-11-25 21:28:53.508 +02:00 [DBG] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Запит списку потягів до сховища
+2026-11-25 21:28:54.374 +02:00 [INF] RailwayErp.MvvmDemo.Repositories.InMemoryTrainRepository: Зі сховища завантажено 4 потягів
+2026-11-25 21:28:54.397 +02:00 [INF] RailwayErp.MvvmDemo.ViewModels.TrainsViewModel: Список потягів завантажено: 4 шт. за 891 мс
+2026-11-25 21:29:23.765 +02:00 [WRN] RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService: Користувач ініціював тестовий краш для перевірки Firebase Crashlytics
+2026-11-25 21:29:23.802 +02:00 [FTL] : Необроблений виняток Android (UnhandledExceptionRaiser)
+System.InvalidOperationException: Тестовий краш RailwayErp (Лаб. 5): перевірка Crashlytics
+   at RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService.<>c.<ForceTestCrash>b__10_0()
+   at Microsoft.Maui.ApplicationModel.MainThread.BeginInvokeOnMainThread(Action action)
+   at RailwayErp.MvvmDemo.Services.CrashReporting.CrashReportingService.ForceTestCrash()
+   at RailwayErp.MvvmDemo.ViewModels.DiagnosticsViewModel.ForceCrashlyticsCrashAsync()
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__124_0(Object state)
+   at Android.App.SyncContext.<>c__DisplayClass2_0.<Post>b__0()
+   at Java.Lang.Thread.RunnableImplementor.Run()
+   at Java.Lang.IRunnableInvoker.n_Run(IntPtr jnienv, IntPtr native__this)

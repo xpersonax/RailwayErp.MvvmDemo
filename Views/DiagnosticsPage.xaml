@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:RailwayErp.MvvmDemo.ViewModels"
+             x:Class="RailwayErp.MvvmDemo.Views.DiagnosticsPage"
+             x:DataType="vm:DiagnosticsViewModel"
+             Title="Діагностика">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="14">
+
+            <Label Text="{Binding LastResult}" TextColor="#1565C0" FontAttributes="Bold" />
+
+            <!-- Логування -->
+            <Border Padding="12" StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Логування (Serilog)" FontAttributes="Bold" FontSize="16" />
+                    <Label FontSize="12" TextColor="Gray" Text="{Binding LogDirectory, StringFormat='Файли логів: {0}'}" />
+                    <Button Text="Записати повідомлення всіх рівнів" Command="{Binding WriteAllLevelsCommand}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Моделювання необроблених винятків -->
+            <Border Padding="12" StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Необроблені винятки" FontAttributes="Bold" FontSize="16" />
+                    <Button Text="Виняток у фоновому Task"
+                            Command="{Binding SimulateUnobservedTaskExceptionCommand}" />
+                    <Label FontSize="12" TextColor="Gray"
+                           Text="TaskScheduler.UnobservedTaskException: застосунок продовжує працювати, у лозі з'являється запис ERR." />
+                    <Button Text="Виняток у фоновому потоці (краш)"
+                            BackgroundColor="#C62828" TextColor="White"
+                            Command="{Binding SimulateBackgroundThreadCrashCommand}" />
+                    <Label FontSize="12" TextColor="Gray"
+                           Text="AppDomain.UnhandledException: застосунок завершиться; після перезапуску у лозі буде запис FTL." />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Crashlytics -->
+            <Border Padding="12" StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Збір крашів" FontAttributes="Bold" FontSize="16" />
+                    <Label FontSize="12" Text="{Binding CrashProvider, StringFormat='Сервіс: {0}'}" />
+                    <Button Text="Надіслати нефатальну помилку" Command="{Binding RecordNonFatalCommand}" />
+                    <Button Text="Тестовий краш (Crashlytics)"
+                            BackgroundColor="#6A1B9A" TextColor="White"
+                            Command="{Binding ForceCrashlyticsCrashCommand}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Звіт користувача -->
+            <Border Padding="12" StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Повідомити про помилку" FontAttributes="Bold" FontSize="16" />
+                    <Editor Placeholder="Що сталося? Які кроки до помилки?" HeightRequest="90"
+                            Text="{Binding BugComment}" />
+                    <Label FontSize="12" TextColor="Gray"
+                           Text="До звіту автоматично додаються версія застосунку, модель і ОС пристрою та останні 80 рядків логу." />
+                    <Button Text="Сформувати й надіслати звіт" Command="{Binding SendBugReportCommand}" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

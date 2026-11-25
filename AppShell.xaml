@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="RailwayErp.MvvmDemo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:RailwayErp.MvvmDemo.Views"
+    Title="RailwayErp">
+
+    <TabBar>
+        <ShellContent Title="Потяги" Route="trains"
+                      ContentTemplate="{DataTemplate views:TrainsPage}" />
+        <ShellContent Title="Логи" Route="logs"
+                      ContentTemplate="{DataTemplate views:LogsPage}" />
+        <ShellContent Title="Діагностика" Route="diagnostics"
+                      ContentTemplate="{DataTemplate views:DiagnosticsPage}" />
+    </TabBar>
+
+</Shell>

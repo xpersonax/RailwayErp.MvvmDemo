@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:RailwayErp.MvvmDemo.ViewModels"
+             xmlns:m="clr-namespace:RailwayErp.MvvmDemo.Models"
+             x:Class="RailwayErp.MvvmDemo.Views.LogsPage"
+             x:DataType="vm:LogsViewModel"
+             Title="Логи">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Оновити" Command="{Binding RefreshCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto,Auto,*" Padding="12" RowSpacing="8">
+
+        <!-- Фільтри: рівень і кількість останніх записів -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,110" ColumnSpacing="8">
+            <Picker Grid.Column="0" Title="Рівень"
+                    ItemsSource="{Binding LevelOptions}"
+                    ItemDisplayBinding="{Binding Title, x:DataType=vm:LevelFilterOption}"
+                    SelectedItem="{Binding SelectedLevel}" />
+            <Picker Grid.Column="1" Title="Останні N"
+                    ItemsSource="{Binding CountOptions}"
+                    SelectedItem="{Binding SelectedCount}" />
+        </Grid>
+
+        <Label Grid.Row="1" Text="{Binding Summary}" FontSize="12" TextColor="Gray" />
+
+        <RefreshView Grid.Row="2" Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+            <CollectionView ItemsSource="{Binding Entries}" SelectionMode="None">
+                <CollectionView.EmptyView>
+                    <Label Text="Записів немає для обраного фільтра." HorizontalOptions="Center" Margin="0,24" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="m:LogEntry">
+                        <Grid ColumnDefinitions="46,*" ColumnSpacing="8" Padding="0,6">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding ShowDetailsCommand, Source={RelativeSource AncestorType={x:Type vm:LogsViewModel}}, x:DataType=vm:LogsViewModel}"
+                                    CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
+
+                            <!-- Бейдж рівня -->
+                            <Border Grid.Column="0" BackgroundColor="{Binding LevelColor}" StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 4" Padding="0,2" VerticalOptions="Start">
+                                <Label Text="{Binding LevelShort}" TextColor="White" FontSize="11"
+                                       FontAttributes="Bold" HorizontalOptions="Center" />
+                            </Border>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                <Label FontSize="11" TextColor="Gray">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding TimeText}" />
+                                            <Span Text="  ·  " />
+                                            <Span Text="{Binding Source}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="{Binding Message}" FontSize="13" LineBreakMode="WordWrap" />
+                                <Label Text="⚠ містить стек винятку — торкніться, щоб переглянути"
+                                       FontSize="11" TextColor="#C62828" IsVisible="{Binding HasException}" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>
